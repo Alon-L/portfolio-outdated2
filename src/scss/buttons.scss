@@ -1,0 +1,6 @@
+// Overriding Bootstrap Button's Styles
+[type="button"], [type="reset"], [type="submit"], button {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}

@@ -1,0 +1,128 @@
+.rotate {
+  @each $class, $val in (-90, 90),
+          (-n90, -90),
+          (-180, 180),
+          (-n180, -180),
+          (-270, 270),
+          (-n270, -270),
+          (-360, 360),
+          (-n360, -360) {
+    &#{$class},
+    &#{$class}-on-hover:hover {
+      transform: rotate(#{$val}deg) !important;
+    }
+  }
+}
+
+.scale {
+  @each $class, $prop, $val in (-90, scale, 0.9),
+          (-x-90, scaleX, 0.9),
+          (-y-90, scaleY, 0.9),
+          (-110, scale, 1.1),
+          (-x-110, scaleX, 1.1),
+          (-y-110, scaleY, 1.1) {
+    &#{$class},
+    &#{$class}-on-hover:hover {
+      transform: $prop+unquote("(#{$val})") !important;
+      backface-visibility: hidden;
+    }
+  }
+}
+
+.translate {
+  @each $class, $prop, $val in (-x-3, translateX, 3px),
+          (-x-n3, translateX, -3px),
+          (-y-3, translateY, 3px),
+          (-y-n3, translateY, -3px),
+          (-x-50, translateX, 50%),
+          (-x-n50, translateX, -50%),
+          (-y-50, translateY, 50%),
+          (-y-n50, translateY, -50%),
+          (-x-100, translateX, 100%),
+          (-x-n100, translateX, -100%),
+          (-y-100, translateY, 100%),
+          (-y-n100, translateY, -100%) {
+    &#{$class},
+    &#{$class}-on-hover:hover {
+      transform: $prop+unquote("(#{$val})") !important;
+    }
+  }
+}
+
+.vh {
+  @each $val in 25, 50, 65, 75, 80, 90, 100 {
+    &-#{$val} {
+      height: #{$val}vh !important;
+    }
+  }
+}
+
+.transform {
+  &-none {
+    transform: none !important;
+  }
+
+  &-xs-none {
+    @include media("<=600px") {
+      transform: none !important;
+    }
+  }
+
+  &-sm-none {
+    @include media("<=800px") {
+      transform: none !important;
+    }
+  }
+
+  &-md-none {
+    @include media("<=1024px") {
+      transform: none !important;
+    }
+  }
+}
+
+.blur-on-hover {
+  &-wrapper {
+    position: relative;
+  }
+
+  &-item {
+    transition: 1s cubic-bezier(0.2, 1, 0.25, 1);
+    filter: blur(0);
+    opacity: 1;
+  }
+
+  &-reveal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+
+  &-wrapper:hover &-item {
+    @include media(">desktop") {
+      transform: scale(0.95);
+      filter: blur(0.3rem);
+      opacity: 0.8;
+    }
+  }
+
+  &-wrapper:hover &-reveal {
+    @include media(">desktop") {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+.border-radius {
+  @each $y in top, bottom {
+    &-#{$y} {
+      @each $x in left, right {
+        border-#{$y}-#{$x}-radius: .65rem !important;
+      }
+    }
+  }
+}

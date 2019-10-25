@@ -1,0 +1,17 @@
+.shadow {
+  box-shadow: 0 (12rem / 16) (12rem / 16) (0.6rem / 16) rgba(132, 138, 163, 0.1) !important;
+
+  &-on-hover:hover {
+    @extend .shadow;
+  }
+
+  &-sm,
+  &-sm-on-hover:hover {
+    box-shadow: 0 .125rem .25rem rgba(132, 138, 163, 0.1) !important;
+  }
+
+  &-lg,
+  &-lg-on-hover:hover {
+    box-shadow: 0 (16rem / 16) (48rem / 16) rgba(132, 138, 163, 0.1) !important;
+  }
+}

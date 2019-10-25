@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import '../../node_modules/include-media/dist/include-media';
+@import 'spacing';
+@import 'sections';
+@import 'buttons';
+@import 'imagery';
+@import 'transforms';
+// Home page
+
+body {
+  background: #fff;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+}
