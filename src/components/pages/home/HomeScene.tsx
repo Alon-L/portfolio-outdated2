@@ -12,10 +12,6 @@ class HomeScene extends Component {
   canvas: HTMLCanvasElement;
 
   componentDidMount(): void {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    const mouse = new THREE.Vector2(0.8, 0.5);
-
     // Creates new renderer
     const renderer = new Renderer(this.canvas);
     renderer.createRenderer();
@@ -71,7 +67,7 @@ class HomeScene extends Component {
 
   render() {
     return (
-      <canvas ref={ref => this.canvas = ref}/>
+      <canvas className="scene" ref={ref => this.canvas = ref}/>
     );
   }
 }

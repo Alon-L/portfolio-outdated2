@@ -1,14 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 @import '../../node_modules/include-media/dist/include-media';
+@import 'colors';
+@import 'typography';
 @import 'spacing';
 @import 'sections';
 @import 'buttons';
 @import 'imagery';
 @import 'transforms';
+@import 'scene';
 // Home page
+@import 'home/home';
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   background: #fff;
   color: #000;
   font-family: 'Poppins', sans-serif;
+}
+
+html, body, #app, main, .content {
+  height: 100%;
 }

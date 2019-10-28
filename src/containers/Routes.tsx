@@ -6,7 +6,7 @@ class Routes extends Component {
   render() {
     return (
       <main>
-        <div className="page-wrapper">
+        <div className="content d-flex flex-column justify-content-center">
           <Switch>
             <Route exact path="/" component={Home}/>
           </Switch>

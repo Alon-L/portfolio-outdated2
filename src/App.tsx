@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Routes from './containers/Routes';
+import NavbarNav from './components/partials/navbar/NavbarNav';
 
 class App extends Component {
   render() {
     return (
-      <div className="wrapper flex">
+      <React.Fragment>
+        <NavbarNav/>
         <Routes/>
-      </div>
+      </React.Fragment>
     );
   }
 }
